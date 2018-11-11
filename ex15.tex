@@ -34,13 +34,15 @@
    \node[state] (q_1) [above right=of q_0] {$q_1$}; 
    \node[state] (q_2) [below right=of q_0] {$q_2$}; 
    \node[state,accepting](q_3) [below right=of q_1] {$q_3$};
+   \node[state, accepting] (q_4) [right=of q_3] {$q_4$};
     \path[->] 
     (q_0) edge  node {$\epsilon$} (q_1)
-          edge  node [swap] {1} (q_2)
+          edge  node [swap] {$\epsilon$} (q_2)
     (q_1) edge  node  {1} (q_3)
           edge [loop above] node {0} ()
     (q_2) edge  node [swap] {0} (q_3) 
-          edge [loop below] node {1} ();
+          edge [loop below] node {1} ()
+    (q_3) edge node {$\epsilon$} (q_4);
 \end{tikzpicture}
 \end{center}
 
