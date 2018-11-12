@@ -52,6 +52,26 @@
     Autômato finito determinístico é aquele em que se sabe exatamente qual o estado atual, ou seja, é aquele que não tem estados simultâneos ( estados ligados por palavras vazias).
 \begin{center}
 \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+    \node[state,initial] (q_0) {$q_0$};
+    \node[state] (q_1) [above right=of q_0] {$q_1$};
+    \node[state, accepting] (q_2) [right=of q_0] {$q_2$};
+    \node[state] (q_3) [below right=of q_0] {$q_3$};
+    \node[state] (q_4) [above right=of q_1] {$q_4$};
+    \node[state] (q_5) [below right=of q_2] {$q_5$};
+    \node[state, accepting] (q_6) [below right=of q_4] {$q_6$};
+     \path[->]
+     (q_0) edge node {a} (q_1)
+           edge node {b} (q_2)
+           edge node {c} (q_3)
+     (q_1) edge [loop above] node {a} ()
+           edge node {b} (q_4)
+     (q_2) edge [loop above] node {c} ()
+           edge node {a} (q_4)
+           edge node {b} (q_5)
+     (q_3) edge [loop below] node {b} ()
+           edge node {a} (q_5)
+     (q_4) edge node {c} (q_6)
+     (q_5) edge node {c} (q_6);
 \end{tikzpicture}
 \end{center}
 
