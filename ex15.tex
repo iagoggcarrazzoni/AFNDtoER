@@ -10,7 +10,7 @@
 
 \floatname{algorithm}{Algoritmo} % tradução da palavra algorítimo no ambiente de índice
 
-\title{O algoritmo de conversão de AFND para ER}
+\title{O algoritmo de conversão de Autômato Finitor Não-Determinístico - AFND para Expressão Regular - ER}
 \author{Eduardo Couto Dinarte}
 
 \begin{document}
@@ -42,7 +42,7 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
         \item estado final;
     \end{itemize}
 
-\section{Introdução ao Autômato Finito Não-Determinístico}
+\section{Introdução ao AFND}
 
     Aut\^{o}mato finito n\~{a}o determin\'{i}stico \'{e} aquele em que, em algum momento, n\~{a}o se tem certeza de qual \'{e} o estado atual, ou seja, \'{e} aquele que tem a palavra vazia ligando algum de seus estados.
 
@@ -65,7 +65,7 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
 \end{center}
 
 
-\section{Introdução ao Autômato Finito Determinístico}
+\section{Introdução ao Autômato Finito Determinístico - AFD}
 
     Autômato finito determinístico é aquele em que se sabe exatamente qual o estado atual, ou seja, é aquele que não tem estados simultâneos ( estados ligados por palavras vazias).
     \begin{center}
@@ -93,7 +93,7 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
 \end{tikzpicture}
 \end{center}
 
-\section{Introdução à Expressão Regular}
+\section{Introdução à ER}
 
     Expressão regular é uma cadeia de caracteres que engloba todas as palavras aceitas pelo autômato. Um autômato reduzido a expressão regular possui apenas um estado inicial e um estado final, ligados pela expressão regular.
 \begin{center}
@@ -106,7 +106,6 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
 \end{center}
 
     No tipo citado, é comum a aparição do caractere '|', assim como o parêntese. Este se aplica da mesma forma que na matemática. Aquele é o conectivo lógico 'ou', que se aplica da mesma forma que na lógica.\\\\Também é comum a aparição do caractere '*' na expressão regular. Ele se chama estrela de Kleene, e denota zero ou mais repetições do caractere ( ou cadeia de caracteres ) ao qual foi aplicado.\\\\No exemplo acima, a estrela de Kleene foi aplicada ao caractere 'a' e à expressão '(b|c)'. Neste, quer dizer que zero ou mais repetições da cadeia denotada serão aceitas, enquanto naquele, zero ou mais repetições do caractere denotado serão aceitos.
-
 
 
 
