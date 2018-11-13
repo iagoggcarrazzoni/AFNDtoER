@@ -89,49 +89,49 @@
 
     No tipo citado, é comum a aparição do caractere '|', assim como o parêntese. Este se aplica da mesma forma que na matemática. Aquele é o conectivo lógico 'ou', que se aplica da mesma forma que na lógica.\\Também é comum a aparição do caractere '*' na expressão regular. Ele se chama estrela de Kleene, e denota zero ou mais repetições do caractere ( ou cadeia de caracteres ) ao qual foi aplicado.\\No exemplo acima, a estrela de Kleene foi aplicada ao caractere 'a' e à expressão '(b|c)'. Neste, quer dizer que zero ou mais repetições da cadeia denotada serão aceitas, enquanto naquele, zero ou mais repetições do caractere denotado serão aceitos.
 
-\section{Implementação}
-
-Para conseguir blablabla
-
-
-
-O algoritmo \textit{Minimax} segue abaixo:
-
-\begin{algorithm}
-\caption{Algoritmo Minimax}\label{alg:minimax}
-\begin{algorithmic}[1]
-\Function{minimax}{estado}\Comment{retorna uma ação}
-\State \textbf{Entradas}: estado é a configuração atual do jogo
-\State $v\gets \mathrm{maxvalor}{(estado)}$
-\State \textbf{returna} a ação $a$ em sucessores(estado) cujo valor é $v$ %\Comment{comentario}
+%\section{Implementação}
+%
+%Para conseguir blablabla
+%
+%
+%
+%O algoritmo \textit{Minimax} segue abaixo:
+%
+%\begin{algorithm}
+%\caption{Algoritmo Minimax}\label{alg:minimax}
+%\begin{algorithmic}[1]
+%\Function{minimax}{estado}\Comment{retorna uma ação}
+%\State \textbf{Entradas}: estado é a configuração atual do jogo
+%\State $v\gets \mathrm{maxvalor}{(estado)}$
+%\State \textbf{returna} a ação $a$ em sucessores(estado) cujo valor é $v$ %\Comment{comentario}
 % \While{$r\not=0$}\Comment{We have the answer if r is 0}
 % \State $a\gets b$
 % \State $b\gets r$
 % \State $r\gets a\bmod b$
 % \EndWhile\label{euclidendwhile}
-\EndFunction
-\Function{maxvalor}{estado}\Comment{retorna o valor estático}
-\If{fim(estado)}
-   \State \textbf{retorna} estatico(estado)
-\EndIf
-\State $v \gets -\infty$
-\For{todas ações $a$ nos sucessores(estado)}
-    \State $v \gets \max{(v, \mathrm{minvalor}(a))}$
-\EndFor
-\State \textbf{retorna} $v$
-\EndFunction
-\Function{minvalor}{estado}\Comment{retorna o valor estático}
-\If{fim(estado)}
-   \State \textbf{retorna} estatico(estado)
-\EndIf
-\State $v \gets \infty$
-\For{todas ações $a$ nos sucessores(estado)}
-    \State $v \gets \min{(v, \mathrm{maxvalor}(a))}$
-\EndFor
-\State \textbf{retorna} $v$
-\EndFunction
-\end{algorithmic}
-\end{algorithm}
+%\EndFunction
+%\Function{maxvalor}{estado}\Comment{retorna o valor estático}
+%\If{fim(estado)}
+%   \State \textbf{retorna} estatico(estado)
+%\EndIf
+%\State $v \gets -\infty$
+%\For{todas ações $a$ nos sucessores(estado)}
+%    \State $v \gets \max{(v, \mathrm{minvalor}(a))}$
+%\EndFor
+%\State \textbf{retorna} $v$
+%\EndFunction
+%\Function{minvalor}{estado}\Comment{retorna o valor estático}
+%\If{fim(estado)}
+%   \State \textbf{retorna} estatico(estado)
+%\EndIf
+%\State $v \gets \infty$
+%\For{todas ações $a$ nos sucessores(estado)}
+%    \State $v \gets \min{(v, \mathrm{maxvalor}(a))}$
+%\EndFor
+%\State \textbf{retorna} $v$
+%\EndFunction
+%\end{algorithmic}
+%\end{algorithm}
 
 
 \end{document}
