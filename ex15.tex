@@ -68,28 +68,28 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
 \section{Introdução ao Autômato Finito Determinístico}
 
     Autômato finito determinístico é aquele em que se sabe exatamente qual o estado atual, ou seja, é aquele que não tem estados simultâneos ( estados ligados por palavras vazias).
-\begin{center}
-\begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
-    \node[state,initial] (q_0) {$q_0$};
-    \node[state] (q_1) [above right=of q_0] {$q_1$};
-    \node[state, accepting] (q_2) [right=of q_0] {$q_2$};
-    \node[state] (q_3) [below right=of q_0] {$q_3$};
-    \node[state] (q_4) [right=of q_1] {$q_4$};
-    \node[state] (q_5) [below right=of q_2] {$q_5$};
-    \node[state, accepting] (q_6) [below right=of q_4] {$q_6$};
-     \path[->]
-     (q_0) edge node {a} (q_1)
-           edge node {b} (q_2)
-           edge node {c} (q_3)
-     (q_1) edge [loop above] node {a} ()
-           edge node {b} (q_4)
-     (q_2) edge [loop above] node {c} ()
-           edge node {a} (q_4)
-           edge node {b} (q_5)
-     (q_3) edge [loop below] node {b} ()
-           edge node {a} (q_5)
-     (q_4) edge node {c} (q_6)
-     (q_5) edge node {c} (q_6);
+    \begin{center}
+    \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+        \node[state,initial] (q_0) {$q_0$};
+        \node[state] (q_1) [above right=of q_0] {$q_1$};
+        \node[state, accepting] (q_2) [right=of q_0] {$q_2$};
+        \node[state] (q_3) [below right=of q_0] {$q_3$};
+        \node[state] (q_4) [right=of q_1] {$q_4$};
+        \node[state] (q_5) [below right=of q_2] {$q_5$};
+        \node[state, accepting] (q_6) [below right=of q_4] {$q_6$};
+        \path[->]
+            (q_0) edge node {a} (q_1)
+                  edge node {b} (q_2)
+                  edge node {c} (q_3)
+            (q_1) edge [loop above] node {a} ()
+                  edge node {b} (q_4)
+            (q_2) edge [loop above] node {c} ()
+                  edge node {a} (q_4)
+                  edge node {b} (q_5)
+            (q_3) edge [loop below] node {b} ()
+                  edge node {a} (q_5)
+            (q_4) edge node {c} (q_6)
+            (q_5) edge node {c} (q_6);
 \end{tikzpicture}
 \end{center}
 
@@ -106,6 +106,8 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
 \end{center}
 
     No tipo citado, é comum a aparição do caractere '|', assim como o parêntese. Este se aplica da mesma forma que na matemática. Aquele é o conectivo lógico 'ou', que se aplica da mesma forma que na lógica.\\\\Também é comum a aparição do caractere '*' na expressão regular. Ele se chama estrela de Kleene, e denota zero ou mais repetições do caractere ( ou cadeia de caracteres ) ao qual foi aplicado.\\\\No exemplo acima, a estrela de Kleene foi aplicada ao caractere 'a' e à expressão '(b|c)'. Neste, quer dizer que zero ou mais repetições da cadeia denotada serão aceitas, enquanto naquele, zero ou mais repetições do caractere denotado serão aceitos.
+
+
 
 
 %\section{Implementação}
