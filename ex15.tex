@@ -101,11 +101,15 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
     \node[state,initial] (q_0) {$q_0$};
     \node[state,accepting] [below right=of q_0] (q_1) {$q_1$};
     \path[->]
-        (q_0) edge node {aa*(b\lorc)*} (q_1);
+        (q_0) edge node {aa*(b {$\lor$} c)*} (q_1);
 \end{tikzpicture}
 \end{center}
 
-    No tipo citado, é comum a aparição do caractere \lor, assim como o parêntese. Este se aplica da mesma forma que na matemática. Aquele é o conectivo lógico 'ou', que se aplica da mesma forma que na lógica.\\\\Também é comum a aparição do caractere '*' na expressão regular. Ele se chama estrela de Kleene, e denota zero ou mais repetições do caractere ( ou cadeia de caracteres ) ao qual foi aplicado.\\\\No exemplo acima, a estrela de Kleene foi aplicada ao caractere 'a' e à expressão '(b\lorc)'. Neste, quer dizer que zero ou mais repetições da cadeia denotada serão aceitas, enquanto naquele, zero ou mais repetições do caractere denotado serão aceitos.
+\begin{abstract}
+
+    No tipo citado, é comum a aparição do caractere \lor, assim como o parêntese. Este se aplica da mesma forma que na matemática. Aquele é o conectivo lógico 'ou', que se aplica da mesma forma que na lógica.\\\\Também é comum a aparição do caractere '*' na expressão regular. Ele se chama estrela de Kleene, e denota zero ou mais repetições do caractere ( ou cadeia de caracteres ) ao qual foi aplicado.\\\\No exemplo acima, a estrela de Kleene foi aplicada ao caractere 'a' e à expressão '(b \lor c)'. Neste, quer dizer que zero ou mais repetições da cadeia denotada serão aceitas, enquanto naquele, zero ou mais repetições do caractere denotado serão aceitos.
+
+\end{abstract}
 
 \section{Conversão de AFND para AFD}
 
