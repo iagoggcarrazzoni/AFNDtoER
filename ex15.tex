@@ -75,6 +75,20 @@
 \end{tikzpicture}
 \end{center}
 
+\section{Introdução à Expressão Regular}
+
+    Expressão regular é uma cadeia de caracteres que engloba todas as palavras aceitas pelo autômato. Um autômato reduzido a expressão regular possui apenas um estado inicial e um estado final, ligados pela expressão regular.
+\begin{center}
+\begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+    \node[state,initial] (q_0) {$q_0$};
+    \node[state,accepting] (q_1) {$q_1$};
+    \path[->]
+        (q_0) edge node {aa*(b|c)*} (q_1);
+\end{tikzpicture}
+\end{center}
+
+    No tipo citado, é comum a aparição do caractere '|', assim como o parêntese. Este se aplica da mesma forma que na matemática. Aquele é o conectivo lógico 'ou', que se aplica da mesma forma que na lógica.\\Também é comum a aparição do caractere '*' na expressão regular. Ele se chama estrela de Kleene, e denota zero ou mais repetições do caractere ( ou cadeia de caracteres ) ao qual foi aplicado.\\No exemplo acima, a estrela de Kleene foi aplicada ao caractere 'a' e à expressão '(b|c)'. Neste, quer dizer que zero ou mais repetições da cadeia denotada serão aceitas, enquanto naquele, zero ou mais repetições do caractere denotado serão aceitos.
+
 \section{Implementação}
 
 Para conseguir blablabla
