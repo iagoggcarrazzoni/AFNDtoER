@@ -4,6 +4,7 @@
 \usepackage{algorithm} % ambiente para índice de algoritmos
 \usepackage{algpseudocode} % fonte e estilo do algoritmo
 \usepackage{tikz} % circuitos e automata
+\usepackage{amsmath} % simbolos matematicos
 %[noend]
 
 \usetikzlibrary{automata,positioning}
@@ -105,11 +106,9 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
 \end{tikzpicture}
 \end{center}
 
-\begin{abstract}
 
-    No tipo citado, é comum a aparição do caractere \lor, assim como o parêntese. Este se aplica da mesma forma que na matemática. Aquele é o conectivo lógico 'ou', que se aplica da mesma forma que na lógica.\\\\Também é comum a aparição do caractere '*' na expressão regular. Ele se chama estrela de Kleene, e denota zero ou mais repetições do caractere ( ou cadeia de caracteres ) ao qual foi aplicado.\\\\No exemplo acima, a estrela de Kleene foi aplicada ao caractere 'a' e à expressão '(b \lor c)'. Neste, quer dizer que zero ou mais repetições da cadeia denotada serão aceitas, enquanto naquele, zero ou mais repetições do caractere denotado serão aceitos.
+    No tipo citado, é comum a aparição do caractere {$\lor$}, assim como o parêntese. Este se aplica da mesma forma que na matemática. Aquele é o conectivo lógico 'ou', que se aplica da mesma forma que na lógica.\\\\Também é comum a aparição do caractere '*' na expressão regular. Ele se chama estrela de Kleene, e denota zero ou mais repetições do caractere ( ou cadeia de caracteres ) ao qual foi aplicado.\\\\No exemplo acima, a estrela de Kleene foi aplicada ao caractere 'a' e à expressão (b {$\lor$} c). Neste, quer dizer que zero ou mais repetições da cadeia denotada serão aceitas, enquanto naquele, zero ou mais repetições do caractere denotado serão aceitos.
 
-\end{abstract}
 
 \section{Conversão de AFND para AFD}
 
