@@ -81,7 +81,7 @@
 \begin{center}
 \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
     \node[state,initial] (q_0) {$q_0$};
-    \node[state,accepting] (q_1) {$q_1$};
+    \node[state,accepting] [right=of q_0] (q_1) {$q_1$};
     \path[->]
         (q_0) edge node {aa*(b|c)*} (q_1);
 \end{tikzpicture}
