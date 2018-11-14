@@ -135,7 +135,7 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
             \node[state] [right=of q_2] (q_5) {$q_5$};
             \path[->]
                 (q_0) edge node {$\epsilon$} (q_1)
-                (q_0) edge node {$\epsilon$} (q_2)
+                (q_0) edge node [swap] {$\epsilon$} (q_2)
                 (q_1) edge node {b} (q_3)
                 (q_1) edge node {a} (q_5)
                 (q_2) edge node {a} (q_5)
