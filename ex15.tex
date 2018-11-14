@@ -125,6 +125,26 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
         \item por fim, esboçar o grafo.    
     \end{itemize}
     Para exemplificar, será realizada a conversão do AFND a seguir:
+    \begin{center}
+        \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+            \node[state,initial] (q_0) {$q_0$};
+            \node[state] [above right=of q_0](q_1) {$q_1$};
+            \node[state] [below right=of q_0] (q_2) {$q_2$};
+            \node[state,accepting] [right=of q_1] {$q_3$};
+            \node[state,accepting] [below right=of q_3] {$q_4$};
+            \node[state] [right=of q_2] (q_5) {$q_5$};
+            \path[->]
+                (q_0) edge node {$\epsilon$} (q_1)
+                (q_0) edge node {$\epsilon$} (q_2)
+                (q_1) edge node {b} (q_3)
+                (q_1) edge node {a} (q_5)
+                (q_2) edge node {a} (q_5)
+                (q_3) edge [loop above] node {a} (q_3)
+                (q_3) edge node {c} (q_4)
+                (q_5) edge [loop below] node {c} (q_5)
+                (q_5) edge node {b} (q_4);
+        \end{tikzpicture}
+    \end{center}
 
 
 %\section{Implementação}
