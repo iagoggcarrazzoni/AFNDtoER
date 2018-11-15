@@ -160,6 +160,58 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
         \end{tikzpicture}
     \end{center}
 
+    Quíntupla da AFND:
+    K = {0, 1, 2, 3, 4, 5}
+    A = {a, b, c}
+    S = {0, 1, 2}
+    F = {3, 4}
+    D =
+
+    Seguindo o algoritmo, o procedimento será o seguinte:
+    \begin{itemize}
+        \item Identificar os estados simultâneos do AFND:
+            E(0) = {0, 1, 2}
+            E(1) = {1}
+            E(2) = {2}
+            E(3) = {3}
+            E(4) = {4}
+            E(5) = {5}
+        \item identificar o estado inicial P0, o qual seu conjunto possui apenas o estado inicial da AFND:
+            P0 = E(0) = {0, 1, 2}
+        \item aplicar em P0 a leitura de todo o alfabeto:
+            P0, a = (1, a, 5) U (2, a, 5) = E(5) = {5}
+            P0, b = (1, b, 3) = E(3) = {3}
+            P0, c = vazio
+        \item Identificar os estados resultantes:
+            P1 = P0, a = {5}
+            P2 = P0, b = {3}
+        \item para cada estado resultante criado, aplica-se o alfabeto:
+            P1, a = vazio
+            P1, b = (5, b, 4) = E(4) = {4}
+            P1, c = (5, c, 5) = E(5) = {5}
+            
+            P2, a = (3, a, 3) = E(3) = {3}
+            P2, b = vazio
+            P2, c = (3, c, 4) = E(4) = {4}
+        \item repetir o procedimento até que não existam mais estados novos:
+            P1, b = P3 = {4}
+            P1, c = P1 = {1}
+            P2, a = P2 = {2}
+            P2, c = P3 = {4}
+
+            P3, a = vazio
+            P3, b = vazio
+            P3, c = vazio
+        \item identificar os estados finais, que serão aqueles estados que possuírem os estados finais da AFND:
+            F = {P2, P3}
+        \item montar a quíntupla do AFD:
+            K = {P0, P1, P2, P3}
+            A = {a, b, c}
+            S = {P0}
+            F = {P2, P3}
+            D =
+        \item por fim, esboçar o grafo.    
+    \end{itemize}
 
 %\section{Implementação}
 %
