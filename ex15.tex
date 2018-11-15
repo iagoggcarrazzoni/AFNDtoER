@@ -125,6 +125,11 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
         \item por fim, esboçar o grafo.    
     \end{itemize}
     Para exemplificar, será realizada a conversão do AFND a seguir:
+        Quíntupla da AFND:
+        K = {0, 1, 2, 3, 4, 5}
+        A = {a, b, c}
+        S = {0, 1, 2}
+        F = {3, 4}
     \begin{center}
         \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
             \node[state,initial] (q_0) {$q_0$};
@@ -159,13 +164,6 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
 %                      edge node {b} (q_4);
         \end{tikzpicture}
     \end{center}
-
-    Quíntupla da AFND:
-    K = {0, 1, 2, 3, 4, 5}
-    A = {a, b, c}
-    S = {0, 1, 2}
-    F = {3, 4}
-    D =
 
     Seguindo o algoritmo, o procedimento será o seguinte:
     \begin{itemize}
