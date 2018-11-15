@@ -116,7 +116,7 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
     \begin{itemize}
         \item Identificar os estados simultâneos do AFND;
         \item identificar o estado inicial P0, o qual seu conjunto possui apenas o estado inicial da AFND;
-        \item aplicar em P0 a leitura de todo o alfabeto;
+        \item aplicar em P0 a leitura de todo o alfabeto. O conjunto novo será composto pelo lugar da chegada;
         \item Identificar os estados resultantes;
         \item para cada estado resultante criado, aplica-se o alfabeto;
         \item repetir o procedimento até que não existam mais estados novos;
@@ -176,7 +176,7 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
             E(5) = {5}
         \item identificar o estado inicial P0, o qual seu conjunto possui apenas o estado inicial da AFND:
             P0 = E(0) = {0, 1, 2}
-        \item aplicar em P0 a leitura de todo o alfabeto:
+        \item aplicar em P0 a leitura de todo o alfabeto. O conjunto novo será composto pelo lugar da chegada:
             P0, a = (1, a, 5) U (2, a, 5) = E(5) = {5}
             P0, b = (1, b, 3) = E(3) = {3}
             P0, c = vazio
@@ -208,7 +208,8 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
             S = {P0}
             F = {P2, P3}
             D =
-        \item por fim, esboçar o grafo.    
+        \item por fim, esboçar o grafo:
+            ...
     \end{itemize}
 
 %\section{Implementação}
