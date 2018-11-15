@@ -197,8 +197,16 @@ Seguindo o algoritmo, o procedimento será o seguinte:
             F = {P2, P3}
             D =
         \item por fim, esboçar o grafo:
-            ...
+            
     \end{itemize}
+    \begin{center}
+        \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+            \node[state,initial] (P_0) {$P_0$};
+            \node[state,accepting] [below right=of P_0] (P_1) {$P_1$};
+            \node[state] [right=of P_1] (P_2) {$P_2$};
+            \node[state,accepting] [right=of P_0] (P_3) {$P_3$};
+        \end{tikzpicture}
+    \end{center}
 
 %\section{Implementação}
 %
