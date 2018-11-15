@@ -140,6 +140,9 @@ Para exemplificar, será realizada a conversão do AFND a seguir:
             \node[state,accepting] [right=of q_1] {$q_3$};
             \node[state,accepting] [above right=of q_5] {$q_4$};
             \node[state] [right=of q_2] (q_5) {$q_5$};
+            \path[->]
+                (q_0) edge node {$\epsilon$} (q_1)
+                      edge node {$\epsilon$} (q_2);
 %            \path[->]
 %                (q_0) edge node {$\epsilon$} (q_1)
 %                      edge node {$\epsilon$} (q_2)
