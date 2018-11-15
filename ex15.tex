@@ -20,14 +20,14 @@
 
 \begin{abstract}
 
-    Este artigo consiste na apresenta\c{c}\~{a}o e explica\c{c}\~{a}o de um algoritmo para converter um aut\^{o}mato finito n\~{a}o determin\'{i}stico num aut\^{o}mato finito determin\'{i}stico e, por fim, converter este numa express\~{a}o regular. O m\'{e}todo consiste em apresentar a teoria com imagens dos tr\^{e}s estados da convers\~{a}o seguida de um exemplo pr\'{a}tico. O objetivo deste texto \'{e} fixar o conte\'{u}do de convers\~{a}o de aut\^{o}matos e familiarizar os autores com a produ\c{c}\~{a}o de artigos cient\'{i}ficos utilizando a linguagem Latex.
+Este artigo consiste na apresenta\c{c}\~{a}o e explica\c{c}\~{a}o de um algoritmo para converter um aut\^{o}mato finito n\~{a}o determin\'{i}stico num aut\^{o}mato finito determin\'{i}stico e, por fim, converter este numa express\~{a}o regular. O m\'{e}todo consiste em apresentar a teoria com imagens dos tr\^{e}s estados da convers\~{a}o seguida de um exemplo pr\'{a}tico. O objetivo deste texto \'{e} fixar o conte\'{u}do de convers\~{a}o de aut\^{o}matos e familiarizar os autores com a produ\c{c}\~{a}o de artigos cient\'{i}ficos utilizando a linguagem Latex.
 
 \end{abstract}
 
 
 \section{Introdução aos Autômatos}
 
-    Um autômato é uma máquina abstrata que deve operar entre estados previamente definidos. É um modelo matemático utilizado para representar programas ou circuitos lógicos. É bem definido por uma quíntupla, cujos elementos são:
+Um autômato é uma máquina abstrata que deve operar entre estados previamente definidos. É um modelo matemático utilizado para representar programas ou circuitos lógicos. É bem definido por uma quíntupla, cujos elementos são:
     \begin{itemize}
         \item Conjunto de estados;
         \item alfabeto;
@@ -43,9 +43,9 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
         \item estado final;
     \end{itemize}
 
-\section{Introdução ao AFND}
+\section{Introdução ao Autômato Finito Não-Determinístico - AFND}
 
-    Aut\^{o}mato finito n\~{a}o determin\'{i}stico \'{e} aquele em que, em algum momento, n\~{a}o se tem certeza de qual \'{e} o estado atual, ou seja, \'{e} aquele que tem a palavra vazia ligando algum de seus estados.
+Aut\^{o}mato finito n\~{a}o determin\'{i}stico \'{e} aquele em que, em algum momento, n\~{a}o se tem certeza de qual \'{e} o estado atual, ou seja, \'{e} aquele que tem a palavra vazia ligando algum de seus estados.
 
 \begin{center}
 \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
@@ -68,7 +68,7 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
 
 \section{Introdução ao Autômato Finito Determinístico - AFD}
 
-    Autômato finito determinístico é aquele em que se sabe exatamente qual o estado atual, ou seja, é aquele que não tem estados simultâneos ( estados ligados por palavras vazias).
+Autômato finito determinístico é aquele em que se sabe exatamente qual o estado atual, ou seja, é aquele que não tem estados simultâneos ( estados ligados por palavras vazias).
     \begin{center}
     \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
         \node[state,initial] (q_0) {$q_0$};
@@ -94,9 +94,9 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
 \end{tikzpicture}
 \end{center}
 
-\section{Introdução à ER}
+\section{Introdução à Expressão Regular - ER}
 
-    Expressão regular é uma cadeia de caracteres que engloba todas as palavras aceitas pelo autômato. Um autômato reduzido a expressão regular possui apenas um estado inicial e um estado final, ligados pela expressão regular.
+Expressão regular é uma cadeia de caracteres que engloba todas as palavras aceitas pelo autômato. Um autômato reduzido a expressão regular possui apenas um estado inicial e um estado final, ligados pela expressão regular.
 \begin{center}
 \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
     \node[state,initial] (q_0) {$q_0$};
@@ -107,12 +107,12 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
 \end{center}
 
 
-    No tipo citado, é comum a aparição do caractere {$\lor$}, assim como o parêntese. Este se aplica da mesma forma que na matemática. Aquele é o conectivo lógico 'ou', que se aplica da mesma forma que na lógica.\\\\Também é comum a aparição do caractere '*' na expressão regular. Ele se chama estrela de Kleene, e denota zero ou mais repetições do caractere ( ou cadeia de caracteres ) ao qual foi aplicado.\\\\No exemplo acima, a estrela de Kleene foi aplicada ao caractere 'a' e à expressão (b {$\lor$} c). Neste, quer dizer que zero ou mais repetições da cadeia denotada serão aceitas, enquanto naquele, zero ou mais repetições do caractere denotado serão aceitos.
+No tipo citado, é comum a aparição do caractere {$\lor$}, assim como o parêntese. Este se aplica da mesma forma que na matemática. Aquele é o conectivo lógico 'ou', que se aplica da mesma forma que na lógica.\\\\Também é comum a aparição do caractere '*' na expressão regular. Ele se chama estrela de Kleene, e denota zero ou mais repetições do caractere ( ou cadeia de caracteres ) ao qual foi aplicado.\\\\No exemplo acima, a estrela de Kleene foi aplicada ao caractere 'a' e à expressão (b {$\lor$} c). Neste, quer dizer que zero ou mais repetições da cadeia denotada serão aceitas, enquanto naquele, zero ou mais repetições do caractere denotado serão aceitos.
 
 
 \section{Conversão de AFND para AFD}
 
-    Para essa conversão, é utilizado o Algoritmo de Conversão de um Autômato Finito Não-determinístico (AFND) em um Autômato Finito Determinístico, que consiste em:
+Para essa conversão, é utilizado o Algoritmo de Conversão de um Autômato Finito Não-determinístico (AFND) em um Autômato Finito Determinístico, que consiste em:
     \begin{itemize}
         \item Identificar os estados simultâneos do AFND;
         \item identificar o estado inicial P0, o qual seu conjunto possui apenas o estado inicial da AFND;
@@ -124,12 +124,14 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
         \item montar a quíntupla do AFD;     
         \item por fim, esboçar o grafo.    
     \end{itemize}
-    Para exemplificar, será realizada a conversão do AFND a seguir:
+
+Para exemplificar, será realizada a conversão do AFND a seguir:
         Quíntupla da AFND:
         K = {0, 1, 2, 3, 4, 5}
         A = {a, b, c}
         S = {0, 1, 2}
         F = {3, 4}
+        D = 
     \begin{center}
         \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
             \node[state,initial] (q_0) {$q_0$};
@@ -165,7 +167,7 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
         \end{tikzpicture}
     \end{center}
 
-    Seguindo o algoritmo, o procedimento será o seguinte:
+Seguindo o algoritmo, o procedimento será o seguinte:
     \begin{itemize}
         \item Identificar os estados simultâneos do AFND:
             E(0) = {0, 1, 2}
