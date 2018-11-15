@@ -137,38 +137,19 @@ Para exemplificar, será realizada a conversão do AFND a seguir:
             \node[state,initial] (q_0) {$q_0$};
             \node[state] [above right=of q_0](q_1) {$q_1$};
             \node[state] [below right=of q_0] (q_2) {$q_2$};
-            \node[state,accepting] [right=of q_1] {$q_3$};
-            \node[state,accepting] [above right=of q_5] {$q_4$};
+            \node[state,accepting] [right=of q_1] (q_3) {$q_3$};
+            \node[state,accepting] [above right=of q_5] (q_4) {$q_4$};
             \node[state] [right=of q_2] (q_5) {$q_5$};
             \path[->]
                 (q_0) edge node {$\epsilon$} (q_1)
                       edge node {$\epsilon$} (q_2)
                 (q_1) edge node {b} (q_3)
-                      edge node {a} (q_5);
-%            \path[->]
-%                (q_0) edge node {$\epsilon$} (q_1)
-%                      edge node {$\epsilon$} (q_2)
-%                (q_1) edge node {b} (q_3)
-%                      edge node {a} (q_5)
-%                (q_2) edge node {a} (q_5)
-%                (q_3) edge [loop above] node {a} ()
-%                      edge node {c} (q_4)
-%                (q_5) edge [loop below] node {c} ()
-%                      edge node {b} (q_4);
-            %\path[->]
-            %    (q_0) edge node {$\epsilon$} (q_1)
-            %          edge node [swap] {$\epsilon$} (q_2)
-%
-%                (q_1) edge node {b} (q_3)
-%                      edge node {a} (q_5)
-%
-%                (q_2) edge node {a} (q_5)
-%
-%                (q_3) edge [loop above] node {a} ()
-%                      edge node {c} (q_4)
-%
-%                (q_5) edge [loop below] node {c} ()
-%                      edge node {b} (q_4);
+                      edge node {a} (q_5)
+                (q_2) edge node {a} (q_5)
+                (q_3) edge [loop above] node {a} ()
+                      edge node {c} (q_4)
+                (q_5) edge [loop below] node {c} ()
+                      edge node {b} (q_4);
         \end{tikzpicture}
     \end{center}
 
@@ -216,8 +197,23 @@ Seguindo o algoritmo, o procedimento será o seguinte:
             F = {P2, P3}
             D =
         \item por fim, esboçar o grafo:
-            ...
+            
     \end{itemize}
+    \begin{center}
+        \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+            \node[state,initial] (P_0) {$P_0$};
+            \node[state,accepting] [below right=of P_0] (P_1) {$P_1$};
+            \node[state] [right=of P_1] (P_2) {$P_2$};
+            \node[state,accepting] [right=of P_0] (P_3) {$P_3$};
+            \path[->]
+                (P_0) edge node {a} (P_3)
+                      edge node {b} (P_1)
+                (P_1) edge [loop below] node {a} ()
+                      edge node {c} (P_2)
+                (P_3) edge [loop above] node {c} ()
+                      edge node {b} (P_2);
+        \end{tikzpicture}
+    \end{center}
 
 %\section{Implementação}
 %
