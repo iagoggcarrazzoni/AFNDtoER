@@ -178,7 +178,7 @@ Seguindo o algoritmo, o procedimento será o seguinte:
             \node[state,initial] (P_0) {$P_0$};
             \node[state] [above right=of P_0] (P_1) {$P_1$};
             \node[state] [below right=of P_0] (P_2) {$P_2$};
-            \node[state,accepting] [right=of P_0] (P_3) {$P_3$};
+            \node[state,accepting] [below right=of P_1] (P_3) {$P_3$};
             \path[->]
                 (P_0) edge node {a} (P_1)
                       edge node {b} (P_2)
