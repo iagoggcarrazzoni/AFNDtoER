@@ -24,23 +24,22 @@ Este artigo consiste na apresenta\c{c}\~{a}o e explica\c{c}\~{a}o de um algoritm
 
 \end{abstract}
 
-
 \section{Introdução aos Autômatos}
 
 Um autômato é uma máquina abstrata que deve operar entre estados previamente definidos. É um modelo matemático utilizado para representar programas ou circuitos lógicos. É bem definido por uma quíntupla, cujos elementos são:
     \begin{itemize}
         \item Conjunto de estados;
-        \item alfabeto;
-        \item estado inicial;
-        \item conjunto de estados finais;
-        \item função de transição (ou função delta).
+        \item Alfabeto;
+        \item Estado inicial;
+        \item Conjunto de estados finais;
+        \item Função de transição (ou função delta).
     \end{itemize}
 
 A função de transição, por sua vez, é representada por uma tripla ordenada, onde os elementos são:
     \begin{itemize}
         \item Estado inicial;
-        \item transição;
-        \item estado final;
+        \item Transição;
+        \item Estado final;
     \end{itemize}
 
 \section{Introdução ao Autômato Finito Não-Determinístico - AFND}
@@ -64,7 +63,6 @@ Aut\^{o}mato finito n\~{a}o determin\'{i}stico \'{e} aquele em que, em algum mom
        (q_3) edge node {$\epsilon$} (q_4);
 \end{tikzpicture}
 \end{center}
-
 
 \section{Introdução ao Autômato Finito Determinístico - AFD}
 
@@ -115,14 +113,14 @@ No tipo citado, é comum a aparição do caractere {$\lor$}, assim como o parên
 Para essa conversão, é utilizado o Algoritmo de Conversão de um Autômato Finito Não-determinístico (AFND) em um Autômato Finito Determinístico, que consiste em:
     \begin{itemize}
         \item Identificar os estados simultâneos do AFND;
-        \item identificar o estado inicial P0, o qual seu conjunto possui apenas o estado inicial da AFND;
-        \item aplicar em P0 a leitura de todo o alfabeto. O conjunto novo será composto pelo lugar da chegada;
+        \item Identificar o estado inicial P0, o qual seu conjunto possui apenas o estado inicial da AFND;
+        \item Aplicar em P0 a leitura de todo o alfabeto. O conjunto novo será composto pelo lugar da chegada;
         \item Identificar os estados resultantes;
-        \item para cada estado resultante criado, aplica-se o alfabeto;
-        \item repetir o procedimento até que não existam mais estados novos;
-        \item identificar os estados finais, que serão aqueles estados que possuírem os estados finais da AFND;     
-        \item montar a quíntupla do AFD;     
-        \item por fim, esboçar o grafo.    
+        \item Para cada estado resultante criado, aplica-se o alfabeto;
+        \item Repetir o procedimento até que não existam mais estados novos;
+        \item Identificar os estados finais, que serão aqueles estados que possuírem os estados finais da AFND;     
+        \item Montar a quíntupla do AFD;     
+        \item Por fim, esboçar o grafo.    
     \end{itemize}
 
 Para exemplificar, será realizada a conversão do AFND a seguir, cuja quíntupla é:\\K = {0, 1, 2, 3, 4, 5}\\A = {a, b, c}\\S = {0}\\F = {3, 4}\\D = (0, {$\epsilon$, 1),\\(0, {$\epsilon$}, 2),\\(1, b, 3),(1, a, 5),\\(2, a, 5)\\(3, a, 3),\\(3, c, 4),\\(5, c, 5),\\(5, b, 4). \\
@@ -174,8 +172,6 @@ Seguindo o algoritmo, o procedimento será o seguinte:
             \\F = {P2, P3}
         \item montar a quíntupla do AFD:
             \\K = {P(0), P(1), P(2), P(3)}\\A = {a, b, c}\\S = {P(0)}\\F = {P(2), P(3)}\\D =
-        \item por fim, esboçar o grafo:
-    \end{itemize}
     \begin{center}
         \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
             \node[state,initial] (P_0) {$P_0$};
