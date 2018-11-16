@@ -189,6 +189,12 @@ Seguindo o algoritmo, o procedimento será o seguinte:
         \end{tikzpicture}
     \end{center}
 
+\section{Conversão AFD - ER}
+    Nessa conversão, o número de transições que o estado inicial possui será muito importante: a ER será uma composição das expressões obtidas seguindo cada um dos caminhos a partir do estado inicial. Por exemplo, se o estado inicial possui 3 transições para outros estados, a ER será uma composição de três expressões, separadas, na ER final, pelo conectivo lógico 'OU'. Em suma, se há três caminhos, é possível seguir pelo primeiro OU pelo segundo OU pelo terceiro. Essa lógica se mantém na ER. Esclarecida esta questão, inicia-se o algoritmo.
+    \begin{itemize}
+        \item Identificar a quantidade de transições do estado inicial que levam a outros estados.
+    \end{itemize}
+
 %\section{Implementação}
 %
 %Para conseguir blablabla
