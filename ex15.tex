@@ -159,7 +159,7 @@ Seguindo o algoritmo, o procedimento será o seguinte:
         \item identificar o estado inicial P0, o qual seu conjunto possui o estado inicial da AFND:
             \\P(0) = E(0) = {0, 1, 2}
         \item aplicar em P0 a leitura de todo o alfabeto. O conjunto novo será composto pelo lugar da chegada:
-            \\D(P(0), a) = (1, a, 5) U (2, a, 5) = E(5) = {5}\\D(P(0), b) = (1, b, 3) = E(3) = {3}\\D(P(0), c) = vazio
+            \\D(P(0), a) = (1, a, 5) U (2, a, 5) = E(5) U E(5) = {5}\\D(P(0), b) = (1, b, 3) = E(3) = {3}\\D(P(0), c) = vazio
         \item Identificar os estados resultantes:
             \\P(1) = D(P(0), a) = {5}\\P(2) = D(P(0), b) = {3}
         \item para cada estado resultante criado, aplica-se o alfabeto:
