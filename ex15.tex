@@ -164,11 +164,11 @@ Seguindo o algoritmo, o procedimento será o seguinte:
             \\P(1) = D(P(0), a) = {5}\\P(2) = D(P(0), b) = {3}
         \item para cada estado resultante criado, aplica-se o alfabeto:
             \\D(P(1), a) = vazio\\D(P(1), b) = (5, b, 4) = E(4) = {4}\\D(P(1), c) = (5, c, 5) = E(5) = {5}
-            D(P(2), a) = (3, a, 3) = E(3) = {3}\\D(P(2), b) = vazio\\D(P(2), c) = (3, c, 4) = E(4) = {4}
+            \\D(P(2), a) = (3, a, 3) = E(3) = {3}\\D(P(2), b) = vazio\\D(P(2), c) = (3, c, 4) = E(4) = {4}
         \item repetir o procedimento até que não existam mais estados novos:
             \\D(P(1), b) = P(3) = {4}\\D(P(1), c) = P(1) = {1}\\D(P(2), a) = P(2) = {2}\\D(P(2), c) = P(3) = {4}\\
             \\D(P(3), a) = vazio\\D(P(3), b) = vazio\\D(P(3), c) = vazio\\
-        \item identificar os estados finais, que serão aqueles estados que possuírem os estados finais da AFND:
+        \item identificar os estados finais, que serão aqueles estados que possuírem os estados finais do AFND:
             \\F = {P(1), P(3)}
         \item montar a quíntupla do AFD:
             \\K = {P(0), P(1), P(2), P(3)}\\A = {a, b, c}\\S = {P(0)}\\F = {P(2), P(3)}\\D =
