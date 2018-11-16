@@ -176,16 +176,16 @@ Seguindo o algoritmo, o procedimento será o seguinte:
     \begin{center}
         \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
             \node[state,initial] (P_0) {$P_0$};
-            \node[state,accepting] [below right=of P_0] (P_1) {$P_1$};
-            \node[state] [right=of P_1] (P_2) {$P_2$};
+            \node[state] [above right=of P_0] (P_1) {$P_1$};
+            \node[state] [below right=of P_0] (P_2) {$P_2$};
             \node[state,accepting] [right=of P_0] (P_3) {$P_3$};
             \path[->]
-                (P_0) edge node {a} (P_3)
-                      edge node {b} (P_1)
-                (P_1) edge [loop below] node {a} ()
-                      edge node {c} (P_2)
-                (P_3) edge [loop above] node {c} ()
-                      edge node {b} (P_2);
+                (P_0) edge node {a} (P_1)
+                      edge node {b} (P_2)
+                (P_1) edge [loop above] node {c} ()
+                      edge node {b} (P_3)
+                (P_2) edge [loop below] node {a} ()
+                      edge node {c} (P_3);
         \end{tikzpicture}
     \end{center}
 
