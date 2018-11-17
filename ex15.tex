@@ -208,7 +208,9 @@ Seguindo o algoritmo, o procedimento será o seguinte:
                         (P_1) edge [loop above] node {c} ()
                               edge node {b} (P_3)
                         (P_2) edge [loop below] node {a} ()
-                              edge node {c} (P_3);
+                              edge node {c} (P_3)
+                        (P_3) edge node {$\epsilon$} (P_5)
+                        (P_4) edge node {$\epsilon$} (P_0);
         \end{tikzpicture}
             \end{center}
     \end{itemize}
