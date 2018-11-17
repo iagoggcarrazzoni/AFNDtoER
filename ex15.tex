@@ -192,7 +192,25 @@ Seguindo o algoritmo, o procedimento será o seguinte:
 \section{Conversão AFD - ER}
     Nessa conversão, o número de transições que o estado inicial possui será muito importante: a ER será uma composição das expressões obtidas seguindo cada um dos caminhos a partir do estado inicial. Por exemplo, se o estado inicial possui 3 transições para outros estados, a ER será uma composição de três expressões, separadas, na ER final, pelo conectivo lógico 'OU'. Em suma, se há três caminhos, é possível seguir pelo primeiro OU pelo segundo OU pelo terceiro. Essa lógica se mantém na ER. Esclarecida esta questão, inicia-se o algoritmo.
     \begin{itemize}
-        \item Identificar a quantidade de transições do estado inicial que levam a outros estados.
+        \item Identificar a quantidade de transições do estado inicial.\\Nº de transições do estado inicial: 2.
+        \item Criar dois outros estados. Um estará ligado aos estados finais do autômato por uma palavra vazia, enquanto o outro estará ligado ao estado inicial pela mesma. Aquele ligado ao estado inicial passará a ser o novo estado inicial, enquanto o ligado aos estados finais, passará a ser o estado final. Eles serão os únicos existentes na ER.
+            \begin{center}
+                \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
+                    \node[state,] (P_0) {$P_0$};
+                    \node[state] [above right=of P_0] (P_1) {$P_1$};
+                    \node[state] [below right=of P_0] (P_2) {$P_2$};
+                    \node[state,accepting] [below right=of P_1] (P_3) {$P_3$};
+                    \node[state,initial] [above left=of P_0] (P_4) {$P_4$};
+                    \node[state,accepting] [below right=of P_3] (P_5) {$P_5$};
+                    \path[->]
+                        (P_0) edge node {a} (P_1)
+                              edge node {b} (P_2)
+                        (P_1) edge [loop above] node {c} ()
+                              edge node {b} (P_3)
+                        (P_2) edge [loop below] node {a} ()
+                              edge node {c} (P_3);
+        \end{tikzpicture}
+            \end{center}
     \end{itemize}
 
 %\section{Implementação}
