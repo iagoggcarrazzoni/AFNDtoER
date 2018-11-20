@@ -189,7 +189,7 @@ Seguindo o algoritmo, o procedimento será o seguinte:
     \end{center}
 
 \section{Conversão AFD - ER}
-    Nessa conversão, o número de transições que o estado inicial possui será muito importante: a ER será uma composição das expressões obtidas seguindo cada um dos caminhos a partir do estado inicial. Por exemplo, se o estado inicial possui 3 transições para outros estados, a ER será uma composição de três expressões, separadas, na ER final, pelo conectivo lógico 'OU'. Em suma, se há três caminhos, é possível seguir pelo primeiro OU pelo segundo OU pelo terceiro. Essa lógica se mantém na ER. Esclarecida esta questão, inicia-se o algoritmo.
+    Nessa conversão, o número de transições que o estado inicial possui será muito importante: a ER será uma composição das expressões obtidas seguindo cada um dos caminhos a partir do estado inicial. Por exemplo, se o estado inicial possui três transições para outros estados, a ER será uma composição de três expressões, separadas, na ER final, pelo conectivo lógico 'OU'. Em suma, se há três caminhos, é possível seguir pelo primeiro OU pelo segundo OU pelo terceiro. Essa lógica se mantém na ER. Esclarecida esta questão, inicia-se o algoritmo.
     \begin{itemize}
         \item Identificar a quantidade de transições do estado inicial.\\Nº de transições do estado inicial: 2.
         \item Criar dois outros estados. Um estará ligado aos estados finais do autômato por uma palavra vazia, enquanto o outro estará ligado ao estado inicial pela mesma. Aquele ligado ao estado inicial passará a ser o novo estado inicial, enquanto o ligado aos estados finais, passará a ser o estado final. Eles serão os únicos existentes na ER.
@@ -212,7 +212,7 @@ Seguindo o algoritmo, o procedimento será o seguinte:
                         (P_4) edge node {$\epsilon$} (P_0);
                 \end{tikzpicture}
             \end{center}
-        \item Colapsar estados até que só reste os dois criados. Consiste em retirar um estado, ligando o estado de chega nele ao estado no qual ele chega. A escolha do estado a se colapsar é completamente arbitrária.\\No exemplo, os primeiros estados a serem colapsados serão o P4 e o P2.\\A única transição nesses estaddos tem os mesmos como estado inicial e final. Portanto, é a mais simples situação a se considerar. Basta inserir A* na transição, onde A é um caractere qualquer.
+        \item Colapsar estados até que só reste os dois criados. Consiste em retirar um estado, ligando o estado de chega nele ao estado no qual ele chega. A escolha do estado a se colapsar é completamente arbitrária.\\No exemplo, os primeiros estados a serem colapsados serão o P4 e o P2.\\A única transição nesses estados tem os mesmos como estado inicial e final. Portanto, é a mais simples situação a se considerar. Basta inserir A* na transição, onde A é um caractere qualquer.
             \begin{center}
                 \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
                     \node[state] (P_0) {$P_0$};
