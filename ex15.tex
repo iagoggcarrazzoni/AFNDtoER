@@ -122,7 +122,7 @@ Para essa conversão, é utilizado o Algoritmo de Conversão de um Autômato Fin
         \item Por fim, esboçar o grafo.    
     \end{itemize}
 
-Para exemplificar, será realizada a conversão do AFND a seguir, cuja quíntupla é:\\K = {0, 1, 2, 3, 4, 5}\\A = {a, b, c}\\S = {0}\\F = {3, 4}\\D = (0, {$\epsilon$, 1),\\(0, {$\epsilon$}, 2),\\(1, b, 3),(1, a, 5),\\(2, a, 5)\\(3, a, 3),\\(3, c, 4),\\(5, c, 5),\\(5, b, 4). \\
+Para exemplificar, será realizada a conversão do AFND a seguir, cuja quíntupla é:\\K = {0, 1, 2, 3, 4, 5}\\A = {a, b, c}\\S = {0}\\F = {3, 4}\\D =\\(0, {$\epsilon$, 1),\\(0, {$\epsilon$}, 2),\\(1, b, 3)\\(1, a, 5),\\(2, a, 5)\\(3, a, 3),\\(3, c, 4),\\(5, c, 5),\\(5, b, 4). \\
     \begin{center}
         \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
             \node[state,initial] (q_0) {$q_0$};
@@ -166,7 +166,7 @@ Seguindo o algoritmo, o procedimento será o seguinte:
             \\D(P(2), a) = (3, a, 3) = E(3) = {3}\\D(P(2), b) = vazio\\D(P(2), c) = (3, c, 4) = E(4) = {4}
         \item repetir o procedimento até que não existam mais estados novos:
             \\D(P(1), b) = P(3) = E(4) = {4}\\D(P(1), c) = P(1) = E(1) = {1}\\D(P(2), a) = P(2) = E(2) = {2}\\D(P(2), c) = P(3) = {4}\\
-            \\D(P(3), a) = vazio\\D(P(3), b) = vazio\\D(P(3), c) = vazio\\
+            \\D(P(3), a) = vazio\\D(P(3), b) = vazio\\D(P(3), c) = vazio
         \item identificar os estados finais, que serão aqueles estados que possuírem os estados finais do AFND:
             \\F = {P(1), P(3)}
         \item montar a quíntupla do AFD:
