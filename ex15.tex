@@ -24,6 +24,7 @@ Este artigo consiste na apresenta\c{c}\~{a}o e explica\c{c}\~{a}o de um algoritm
 
 \end{abstract}
 
+\newpage
 \section{Introdução aos Autômatos}
 
 Um autômato é uma máquina abstrata que deve operar entre estados previamente definidos. É um modelo matemático utilizado para representar programas ou circuitos lógicos. É bem definido por uma quíntupla, cujos elementos são:
@@ -41,8 +42,8 @@ A função de transição, por sua vez, é representada por uma tripla ordenada,
         \item Transição;
         \item Estado final;
     \end{itemize}
-\newpage
 
+\newpage
 \section{Introdução ao Autômato Finito Não-Determinístico - AFND}
 
 Aut\^{o}mato finito n\~{a}o determin\'{i}stico \'{e} aquele em que, em algum momento, n\~{a}o se tem certeza de qual \'{e} o estado atual, ou seja, \'{e} aquele que tem a palavra vazia ligando algum de seus estados. Segue um exemplo a seguir:
@@ -65,6 +66,7 @@ Aut\^{o}mato finito n\~{a}o determin\'{i}stico \'{e} aquele em que, em algum mom
 \end{tikzpicture}
 \end{center}
 
+\newpage
 \section{Introdução ao Autômato Finito Determinístico - AFD}
 
 Autômato finito determinístico é aquele em que se sabe exatamente qual o estado atual, ou seja, é aquele que não tem estados simultâneos (estados ligados por palavras vazias).
@@ -108,6 +110,7 @@ Expressão regular é uma cadeia de caracteres que engloba todas as palavras ace
 
 No tipo citado, é comum a aparição do caractere {$\lor$}, assim como o parêntese. Este se aplica da mesma forma que na matemática. Aquele é o conectivo lógico 'ou', que se aplica da mesma forma que na lógica.\\\\Também é comum a aparição do caractere '*' na expressão regular. Ele se chama estrela de Kleene, e denota zero ou mais repetições do caractere ( ou cadeia de caracteres ) ao qual foi aplicado.\\\\No exemplo acima, a estrela de Kleene foi aplicada ao caractere 'a' e à expressão (b {$\lor$} c). Neste, quer dizer que zero ou mais repetições da cadeia denotada serão aceitas, enquanto naquele, zero ou mais repetições do caractere denotado serão aceitos.
 
+\newpage
 \section{Conversão de AFND para AFD}
 
 Para essa conversão, é utilizado o Algoritmo de Conversão de um Autômato Finito Não-determinístico (AFND) em um Autômato Finito Determinístico, que consiste em:
@@ -189,6 +192,7 @@ Seguindo o algoritmo, o procedimento será o seguinte:
         \end{tikzpicture}
     \end{center}
 
+\newpage
 \section{Conversão AFD - ER}
     Nessa conversão, o número de transições que o estado inicial possui será muito importante: a ER será uma composição das expressões obtidas seguindo cada um dos caminhos a partir do estado inicial. Por exemplo, se o estado inicial possui três transições para outros estados, a ER será uma composição de três expressões, separadas, na ER final, pelo conectivo lógico 'OU'. Em suma, se há três caminhos, é possível seguir pelo primeiro OU pelo segundo OU pelo terceiro. Essa lógica se mantém na ER. Esclarecida esta questão, inicia-se o algoritmo.
     \begin{itemize}
