@@ -34,7 +34,7 @@ Um autômato é uma máquina abstrata que deve operar entre estados previamente 
         \item Alfabeto (A);
         \item Estado inicial (S);
         \item Conjunto de estados finais (F);
-        \item Função de transição (ou função {$\delta$}).
+        \item Função de transição (ou função {$\Delta$}).
     \end{itemize}
 
 A função de transição, por sua vez, é representada por uma tripla ordenada, onde os elementos são:
@@ -127,7 +127,7 @@ Para essa conversão, é utilizado o Algoritmo de Conversão de um Autômato Fin
         \item Por fim, esboçar o grafo.    
     \end{itemize}
 
-Para exemplificar, será realizada a conversão do AFND a seguir, cuja quíntupla é:\\K = \{0, 1, 2, 3, 4, 5\}\\A = \{a, b, c\}\\S = \{0\}\\F = \{3, 4\}\\D =\\(0, {$\epsilon$}, 1),\\(0, {$\epsilon$}, 2),\\(1, b, 3)\\(1, a, 5),\\(2, a, 5)\\(3, a, 3),\\(3, c, 4),\\(5, c, 5),\\(5, b, 4). \\
+Para exemplificar, será realizada a conversão do AFND a seguir, cuja quíntupla é:\\K = \{0, 1, 2, 3, 4, 5\}\\A = \{a, b, c\}\\S = \{0\}\\F = \{3, 4\}\\{$\Delta$} =\\(0, {$\epsilon$}, 1),\\(0, {$\epsilon$}, 2),\\(1, b, 3)\\(1, a, 5),\\(2, a, 5)\\(3, a, 3),\\(3, c, 4),\\(5, c, 5),\\(5, b, 4). \\
     \begin{center}
         \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
             \node[state,initial] (q_0) {$q_0$};
@@ -175,7 +175,7 @@ Seguindo o algoritmo, o procedimento será o seguinte:
         \item identificar os estados finais, que serão aqueles estados que possuírem os estados finais do AFND:
             \\F = {P(1), P(3)}
         \item montar a quíntupla do AFD:
-            \\K = \{P(0), P(1), P(2), P(3)\}\\A = \{a, b, c\}\\S = \{P(0)\}\\F = \{P(2), P(3)\}\\Pode ser difícil observar os elementos da função delta. Eles serão todos os D(P(x), 'caractere') que calculamos. Assim:\\D =\\(P0, a, P1),\\(P0, b, P2),\\(P1, b, P3),\\(P1, c, P1),\\(P2, a, P2),\\(P2, c, P3).
+            \\K = \{P(0), P(1), P(2), P(3)\}\\A = \{a, b, c\}\\S = \{P(0)\}\\F = \{P(2), P(3)\}\\Pode ser difícil observar os elementos da função delta. Eles serão todos os D(P(x), 'caractere') que calculamos. Assim:\\{$\Delta$} =\\(P0, a, P1),\\(P0, b, P2),\\(P1, b, P3),\\(P1, c, P1),\\(P2, a, P2),\\(P2, c, P3).
     \end{itemize}
     \begin{center}
         \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
