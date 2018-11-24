@@ -236,7 +236,7 @@ Seguindo o algoritmo, o procedimento será o seguinte:
             \begin{center}
                 \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
                     \node[state, initial] (P_4) {$P_4$};
-                    \node[state, accepting] (P_5) {$P_5$};
+                    \node[state, accepting] [below right=of P_4] (P_5) {$P_5$};
                     \path[->]
                         (P_4) edge node {ac*b V ba*c} (P_5);
                 \end{tikzpicture}
