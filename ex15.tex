@@ -5,6 +5,7 @@
 \usepackage{algpseudocode} % fonte e estilo do algoritmo
 \usepackage{tikz} % circuitos e automata
 \usepackage{amsmath} % simbolos matematicos
+\usepackage{graphicx} % inserir figuras
 %[noend]
 
 \usetikzlibrary{automata,positioning}
@@ -218,65 +219,29 @@ Seguindo o algoritmo, o procedimento será o seguinte:
                 \end{tikzpicture}
             \end{center}
         \item Colapsar estados até que só reste os dois criados. Consiste em retirar um estado, ligando o estado de chega nele ao estado no qual ele chega. A escolha do estado a se colapsar é completamente arbitrária.\\No exemplo, os primeiros estados a serem colapsados serão o P4 e o P2.\\A única transição nesses estados tem os mesmos como estado inicial e final. Portanto, é a mais simples situação a se considerar. Basta inserir A* na transição, onde A é um caractere qualquer.
+        \begin{center}
+            \begin{figure}[!htb]
+                \includegraphics[scale = 1]{Figura_ex15.png}
+            \end{figure}
+        \end{center}
+            %\graphicspath{{figuras/}}
+            %\begin{document}
+            %\begin{figure}[!htb]
+            %    \centering
+            %    \includegraphics{droopy}
+            %    \caption{Legenda}
+            %    \label{figRotulo}
+            %\end{figure}
+            Colapsando simultaneamente os estados P3 e P4, vem:
             \begin{center}
                 \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
-                    \node[state] (P_0) {$P_0$};
-                    \node[state] [right=of P_0] (P_3) {$P_3$};
-                    \node[state,initial] [above left=of P_0] (P_4) {$P_4$};
-                    \node[state,accepting] [below right=of P_3] (P_5) {$P_5$};
+                    \node[state, initial] (P_4) {$P_4$};
+                    \node[state, accepting] [below right=of P_4] (P_5) {$P_5$};
                     \path[->]
-                        %(P_0) edge [loop above] node {ac*b} (P_3)
-                        %      edge [loop below] node [swap] {ba*c} (P_3)
-                        (P_3) edge node {$\epsilon$} (P_5)
-                        (P_4) edge node {$\epsilon$} (P_0);
-                    \draw[->] (P_0) [label = ac*b] to[out=0,in=180] (P_3);
+                        (P_4) edge node {ac*b V ba*c} (P_5);
                 \end{tikzpicture}
             \end{center}
+
     \end{itemize}
-
-%\section{Implementação}
-%
-%Para conseguir blablabla
-%
-%
-%
-%O algoritmo \textit{Minimax} segue abaixo:
-%
-%\begin{algorithm}
-%\caption{Algoritmo Minimax}\label{alg:minimax}
-%\begin{algorithmic}[1]
-%\Function{minimax}{estado}\Comment{retorna uma ação}
-%\State \textbf{Entradas}: estado é a configuração atual do jogo
-%\State $v\gets \mathrm{maxvalor}{(estado)}$
-%\State \textbf{returna} a ação $a$ em sucessores(estado) cujo valor é $v$ %\Comment{comentario}
-% \While{$r\not=0$}\Comment{We have the answer if r is 0}
-% \State $a\gets b$
-% \State $b\gets r$
-% \State $r\gets a\bmod b$
-% \EndWhile\label{euclidendwhile}
-%\EndFunction
-%\Function{maxvalor}{estado}\Comment{retorna o valor estático}
-%\If{fim(estado)}
-%   \State \textbf{retorna} estatico(estado)
-%\EndIf
-%\State $v \gets -\infty$
-%\For{todas ações $a$ nos sucessores(estado)}
-%    \State $v \gets \max{(v, \mathrm{minvalor}(a))}$
-%\EndFor
-%\State \textbf{retorna} $v$
-%\EndFunction
-%\Function{minvalor}{estado}\Comment{retorna o valor estático}
-%\If{fim(estado)}
-%   \State \textbf{retorna} estatico(estado)
-%\EndIf
-%\State $v \gets \infty$
-%\For{todas ações $a$ nos sucessores(estado)}
-%    \State $v \gets \min{(v, \mathrm{maxvalor}(a))}$
-%\EndFor
-%\State \textbf{retorna} $v$
-%\EndFunction
-%\end{algorithmic}
-%\end{algorithm}
-
 
 \end{document}
