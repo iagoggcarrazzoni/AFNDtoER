@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt, dvipdfm]{article} %twocolumn
+\documentclass[a4paper,10pt]{article} %twocolumn
 \usepackage[utf8]{inputenc} % letras acentuadas
 \usepackage[portuguese]{babel} % tradução de títulos
 \usepackage{algorithm} % ambiente para índice de algoritmos
@@ -200,6 +200,8 @@ Seguindo o algoritmo, o procedimento será o seguinte:
         \item Identificar a quantidade de transições do estado inicial.\\Nº de transições do estado inicial: 2.
         \item Criar dois outros estados. Um estará ligado aos estados finais do autômato por uma palavra vazia, enquanto o outro estará ligado ao estado inicial pela mesma. Aquele ligado ao estado inicial passará a ser o novo estado inicial, enquanto o ligado aos estados finais, passará a ser o estado final. Eles serão os únicos existentes na ER.
             \begin{center}
+                \begin{figure}[!htb]
+                    \includegraphics[scale = 1]{Figura_ex15.png}
 %                \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto] 
 %                    \node[state] (P_0) {$P_0$};
 %                    \node[state] [above right=of P_0] (P_1) {$P_1$};
@@ -217,6 +219,7 @@ Seguindo o algoritmo, o procedimento será o seguinte:
 %                        (P_3) edge node {$\epsilon$} (P_5)
 %                        (P_4) edge node {$\epsilon$} (P_0);
 %                \end{tikzpicture}
+                 \end{figure}
             \end{center}
         \item Colapsar estados até que só reste os dois criados. Consiste em retirar um estado, ligando o estado de chega nele ao estado no qual ele chega. A escolha do estado a se colapsar é completamente arbitrária.\\No exemplo, os primeiros estados a serem colapsados serão o P4 e o P2.\\A única transição nesses estados tem os mesmos como estado inicial e final. Portanto, é a mais simples situação a se considerar. Basta inserir A* na transição, onde A é um caractere qualquer.
             %\graphicspath{{figuras/}}
